@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Flowbite */
+@import 'flowbite';
+
+.active svg{
+    fill:#F37021;
+}
+.inactive svg {
+    fill: #fff;
+    opacity: 0.5;
+}

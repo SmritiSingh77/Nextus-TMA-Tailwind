@@ -7,6 +7,7 @@ import birdPng from "../../assets/images/bird.webp";
 import rightArrow from "../../assets/images/icon/rightarr.webp";
 import spark from "../../assets/images/icon/spark.webp";
 import battery from "../../assets/images/icon/battery.webp";
+import WelcomBonus from './WelcomBonus';
 
 const Home = () => {
 
@@ -59,6 +60,8 @@ const Home = () => {
         </div>
 
       </div>
+
+      <WelcomBonus />
 
       <BottomNavbar />
     </div>

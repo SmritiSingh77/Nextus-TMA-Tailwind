@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
-import cross from "../../assets/images/icon/x-circle.png";
+import React from 'react';
 
-
-
-function ConnectNextus() {
-    const [openModal, setOpenModal] = useState(false);
-
+function ConnectNextus({ openModal, setOpenModal }) {
     const handleOpen = () => {
-        setOpenModal(true)
-    }
-
-    const handleClose = () => {
-        setOpenModal(true)
-    }
+        setOpenModal(!openModal);
+    };
 
     return (
         <div className="relative flex justify-between items-center mt-[24px]">
@@ -29,8 +20,7 @@ function ConnectNextus() {
                 </label>
             </div>          
         </div>
-
-    )
+    );
 }
 
-export default ConnectNextus
+export default ConnectNextus;

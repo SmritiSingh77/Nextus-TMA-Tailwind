@@ -8,25 +8,26 @@ import coin_m from "../../assets/images/icon/coin-m.png";
 
 function HeaderClaimSection() {
     const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-    const [openModal, setOpenModal] = useState(false);
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
 
     const handleTooltipToggle = () => {
         setIsTooltipVisible(!isTooltipVisible);
     };
-
-    const handleOpen = () => {
-        setOpenModal(true);
-    };
-
-    const handleClose = () => {
-        setOpenModal(false);
+    const handlePopupToggle = () => {
+        setIsPopupVisible(!isPopupVisible);
     };
 
     return (
         <>
             <div className="py-2 flex">
                 <div className="w-7/12 flex justify-between">
-                    <div className="w-[45%]" onClick={handleOpen}>
+                    <button
+                        className="w-[45%]"
+                        type="button"
+                        onClick={handlePopupToggle}
+                        aria-controls="bottom-popup"
+                        aria-expanded={isPopupVisible}
+                    >
                         <div className="flex flex-col items-center cursor-pointer">
                             <img src={reward} alt="Reward Icon" />
                             <p className="text-white text-[12px] font-semibold leading-none text-center mb-2">
@@ -36,7 +37,7 @@ function HeaderClaimSection() {
                                 11:23 H
                             </span>
                         </div>
-                    </div>
+                    </button>
 
                     <div className="border-r-[1px] border h-[40px] m-auto"></div>
 
@@ -53,7 +54,7 @@ function HeaderClaimSection() {
                     </div>
                 </div>
 
-                <div className="w-5/12 flex items-center justify-center gap-1.5 p-[6px_10px] rounded-lg border border-[rgba(255,255,255,0.20)] bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.02)_100%)] backdrop-blur-sm">
+                <div className="w-5/12 flex items-center justify-center gap-1.5 p-[6px_10px] rounded-lg border border-[rgba(255,255,255,0.20)] bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.02)_100%)] backdrop-blur-sm relative">
                     <img src={coins} alt="Coins Icon" />
                     <div>
                         <div className="flex items-center">
@@ -78,36 +79,34 @@ function HeaderClaimSection() {
                         <h4 className="text-lg font-bold text-white">10</h4>
                     </div>
                 </div>
+            </div>
 
+            {isPopupVisible && (
+                <div className="fixed inset-0 z-30 backdrop-blur-lg bg-black/20" onClick={handlePopupToggle}></div>
+            )}
 
-                {/* Modal */}
-                {openModal && <div className="fixed inset-0 w-full h-full bg-black/20 backdrop-blur-[8px] z-[9]"></div>}
-
-                <div
-                    className= {`fixed bottom-0 w-full rounded-t-[16px] border border-white/20 bg-black shadow-[0_-8px_72px_rgba(243,112,33,0.4)] z-10 p-[17px] ${openModal ? 'show' : ''}`}
-                    tabIndex="-1"
-                    style={{
-                        visibility: openModal ? 'visible' : 'hidden',
-                        height: 'fit-content',
-                    }}
-                >
-                    <div>
-                        <div className="z-[10] absolute w-[167px] h-[167px] -top-[80px] left-[100px] bg-[#EE2B00]/40 blur-[75px]"></div>
-                        <button type="button" className="btn-close float-end" onClick={handleClose}>
-                            <img src={cross} alt="" />
-                        </button>
-                    </div>
-                    <div>
-                        <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[15px]">Daily Rewards</h2>
-                        <div className="flex flex-wrap justify-center">
-                            <div className="daily-rewards-card day-completed">
-                                <h3>Day 3</h3>
-                                <img src={coin_m} alt="" />
-                                <small>+100K</small>
-                            </div>
+            <div
+                id="bottom-popup"
+                className={`${isPopupVisible ? "fixed" : "hidden"} bottom-0 left-0 right-0 z-40 w-full overflow-y-auto transition-transform transform-none rounded-t-[16px] border border-white/20 bg-black shadow-[0_-8px_72px_rgba(243,112,33,0.4)] p-[17px]`}
+                tabIndex="-1"
+                aria-labelledby="drawer-bottom-label"
+            >
+                <div>
+                    <div className="z-[10] absolute w-[167px] h-[167px] -top-[80px] left-[100px] bg-[#EE2B00]/40 blur-[75px]"></div>
+                    <button type="button" className="btn-close float-end" onClick={handlePopupToggle} aria-controls="bottom-popup">
+                        <img src={cross} alt="Close Icon" />
+                    </button>
+                </div>
+                <div>
+                    <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[15px]">Daily Rewards</h2>
+                    <div className="flex flex-wrap justify-center">
+                        <div className="daily-rewards-card day-completed">
+                            <h3>Day 3</h3>
+                            <img src={coin_m} alt="Coin" />
+                            <small>+100K</small>
                         </div>
-                        <button className="rotate-btn">Claim</button>
                     </div>
+                    <button className="rotate-btn">Claim</button>
                 </div>
             </div>
         </>
