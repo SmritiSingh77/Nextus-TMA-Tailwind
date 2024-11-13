@@ -7,19 +7,26 @@ import cross from "../../assets/images/icon/x-circle.png";
 import coin_m from "../../assets/images/icon/coin-m.png";
 
 function HeaderClaimSection() {
+    // State to control the visibility of the tooltip and popup
     const [isTooltipVisible, setIsTooltipVisible] = useState(false);
     const [isPopupVisible, setIsPopupVisible] = useState(false);
 
+    // Toggle the tooltip visibility
     const handleTooltipToggle = () => {
         setIsTooltipVisible(!isTooltipVisible);
     };
+
+    // Toggle the popup visibility
     const handlePopupToggle = () => {
         setIsPopupVisible(!isPopupVisible);
     };
 
     return (
         <>
+            {/* Header claim section with trade and quiz information */}
             <div className="py-2 flex">
+                
+                {/* Daily Trade Section with reward icon */}
                 <div className="w-7/12 flex justify-between">
                     <button
                         className="w-[45%]"
@@ -39,8 +46,10 @@ function HeaderClaimSection() {
                         </div>
                     </button>
 
+                    {/* Divider */}
                     <div className="border-r-[1px] border h-[40px] m-auto"></div>
 
+                    {/* Daily Quiz Section */}
                     <div className="w-[45%]">
                         <div className="flex flex-col items-center cursor-pointer">
                             <img src={mystery} alt="Mystery Icon" />
@@ -54,6 +63,7 @@ function HeaderClaimSection() {
                     </div>
                 </div>
 
+                {/* Points and Info Tooltip Section */}
                 <div className="w-5/12 flex items-center justify-center gap-1.5 p-[6px_10px] rounded-lg border border-[rgba(255,255,255,0.20)] bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.02)_100%)] backdrop-blur-sm relative">
                     <img src={coins} alt="Coins Icon" />
                     <div>
@@ -69,6 +79,7 @@ function HeaderClaimSection() {
                                 <img src={infoIcon} alt="Info Icon" loading="lazy" />
                             </button>
                         </div>
+                        {/* Tooltip display */}
                         {isTooltipVisible && (
                             <div className="absolute bg-white text-black p-2 text-[8px] rounded top-[34px] w-[150px] text-center z-10 flex items-center right-0">
                                 "Points per Hour" shows how many points are mined
@@ -81,10 +92,12 @@ function HeaderClaimSection() {
                 </div>
             </div>
 
+            {/*Blurr Overlay for popup */}
             {isPopupVisible && (
                 <div className="fixed inset-0 z-30 backdrop-blur-lg bg-black/20" onClick={handlePopupToggle}></div>
             )}
 
+            {/* Bottom popup with daily rewards information */}
             <div
                 id="bottom-popup"
                 className={`${isPopupVisible ? "fixed" : "hidden"} bottom-0 left-0 right-0 z-40 w-full overflow-y-auto transition-transform transform-none rounded-t-[16px] border border-white/20 bg-black shadow-[0_-8px_72px_rgba(243,112,33,0.4)] p-[17px]`}
@@ -97,12 +110,13 @@ function HeaderClaimSection() {
                         <img src={cross} alt="Close Icon" />
                     </button>
                 </div>
+                {/* Daily rewards content */}
                 <div>
                     <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[15px]">Daily Rewards</h2>
                     <div className="flex flex-wrap justify-center">
                         <div className="daily-rewards-card day-completed">
                             <h3>Day 3</h3>
-                            <img src={coin_m} alt="Coin" />
+                            <img src={coin_m} alt="Coin Icon" />
                             <small>+100K</small>
                         </div>
                     </div>

@@ -5,6 +5,9 @@ import shareImg from "../../assets/images/icon/share-2.webp";
 import copy from "../../assets/images/icon/copy.webp";
 import BottomNavbar from '../../components/BottomNavbar'
 import profile from "../../assets/images/icon/profile-pic.webp";
+import badgeOne from "../../assets/images/icon/badge-1.webp";
+import badgeTwo from "../../assets/images/icon/badge-2.webp";
+import badgeThree from "../../assets/images/icon/badge-3.webp";
 
 
 function Referal() {
@@ -44,6 +47,27 @@ function Referal() {
         }
     ]
 
+    const PointsData = [
+        {
+            img: badgeOne,
+            headingOne: 'Refer 10 People',
+            headingTwo: 'Get 10,000 Points',
+            counts: '0/10'
+        },
+        {
+            img: badgeTwo,
+            headingOne: 'Refer 25 People',
+            headingTwo: 'Get 30,000 Points',
+            counts: '0/25'
+        },
+        {
+            img: badgeThree,
+            headingOne: 'Refer 50 People',
+            headingTwo: 'Get 50,000 Points',
+            counts: '0/50'
+        }
+    ]
+
     return (
         <div className="h-screen relative bg-[url('../../public/images/home-bg.webp')] bg-cover bg-center w-full">
             <div className='p-[18px] h-full'>
@@ -74,32 +98,32 @@ function Referal() {
                     </button>
                 </div>
 
-                <div className="h-[48%] overflow-auto mt-[20px]">
+                <div className="h-[47%] overflow-auto mt-[20px]">
                     {activeTab === "Referrals" && (
                         <>
                             {
                                 ReferalData.map((items, index) => (
                                     <div
-                                        className={`flex justify-between items-center text-center border-b border-nextusGray pb-3.5 mb-3.5 ${index === ReferalData.length - 1 ? 'border-b-0' : ''}`}
+                                        className={`flex justify-between items-center text-center pb-3.5 mb-3.5 ${index === ReferalData.length - 1 ? '' : 'border-b border-nextusGray'}`}
                                         key={index}
                                     >
-                                        <div class="flex flex-col justify-center items-center w-[25%]">
+                                        <div className="flex flex-col justify-center items-center w-[25%]">
                                             <img src={items.profileImg} alt="" />
-                                            <h3 class="text-[14px] text-white font-semibold mt-1">{items.userName}</h3>
+                                            <h3 className="text-[14px] text-white font-semibold mt-1">{items.userName}</h3>
                                         </div>
-                                        <div class="flex flex-col items-center w-[20%]">
-                                            <small class="text-nextusGray text-[12px] font-semibold">Points</small>
-                                            <p class="text-white text-[15px] font-semibold">{items.points}</p>
+                                        <div className="flex flex-col items-center w-[20%]">
+                                            <small className="text-nextusGray text-[12px] font-semibold">Points</small>
+                                            <p className="text-white text-[15px] font-semibold">{items.points}</p>
                                         </div>
-                                        <div class="h-[30px] w-px bg-white"></div>
-                                        <div class="flex flex-col items-center w-[20%]">
-                                            <small class="text-nextusGray text-[12px] font-semibold">Level</small>
-                                            <p class="text-white text-[15px] font-semibold">{items.level}</p>
+                                        <div className="h-[30px] w-px bg-white"></div>
+                                        <div className="flex flex-col items-center w-[20%]">
+                                            <small className="text-nextusGray text-[12px] font-semibold">Level</small>
+                                            <p className="text-white text-[15px] font-semibold">{items.level}</p>
                                         </div>
-                                        <div class="h-[30px] w-px bg-white"></div>
-                                        <div class="flex flex-col items-center w-[20%]">
-                                            <small class="text-nextusGray text-[12px] font-semibold">Rank</small>
-                                            <p class="text-white text-[15px] font-semibold">{items.rank}</p>
+                                        <div className="h-[30px] w-px bg-white"></div>
+                                        <div className="flex flex-col items-center w-[20%]">
+                                            <small className="text-nextusGray text-[12px] font-semibold">Rank</small>
+                                            <p className="text-white text-[15px] font-semibold">{items.rank}</p>
                                         </div>
                                     </div>
                                 ))
@@ -107,12 +131,28 @@ function Referal() {
                         </>
                     )}
                     {activeTab === "Points" && (
-                        <><h1>h2</h1>
+                        <>
+                        {
+                        PointsData.map((items, index)=>(
+                            <div key={index} className={`flex justify-between pb-[14px] mb-[14px] ${index === PointsData.length - 1 ? '' : 'border-b border-nextusGray' }`}>
+                                <div className="flex items-center gap-2">
+                                    <img src={items.img} alt="" className='w-[55px] h-[55px]' />
+                                    <div>
+                                        <h5 className='text-white text-[16px] font-semibold'>{items.headingOne}</h5>
+                                        <h6 className='text-brand text-[12px] font-semibold'>{items.headingTwo}</h6>
+                                    </div>
+                                </div>
+                                <div className="">
+                                    <span className="text-white text-[10px] font-medium">{items.counts}</span>
+                                </div>
+                            </div>
+                        ))
+                        }
                         </>
                     )}
                 </div>
 
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center gap-4 mt-3">
                     <button
                         className="rounded-xl border border-[rgba(255,255,255,0.2)] bg-brand backdrop-blur-sm text-base font-semibold flex items-center justify-center gap-[6px] text-white w-[200px] h-12"
                     // onClick={() => {
