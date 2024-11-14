@@ -3,6 +3,7 @@ import filter from "../../assets/images/icon/list-filter.png";
 import BottomNavbar from '../../components/BottomNavbar';
 import ReferalLeaderboard from '../../components/ReferalLeaderboard';
 import cross from "../../assets/images/icon/x-circle.png";
+import MasterLeaderboard from '../../components/MasterLeaderboard';
 
 function Leaderboard() {
 
@@ -15,9 +16,9 @@ function Leaderboard() {
 
     return (
         <>
-            <div className="h-screen relative bg-[url('../../public/images/home-bg.webp')] bg-cover bg-center w-full p-[18px]">
+            <div className="h-screen relative bg-[url('../../public/images/home-bg.webp')] bg-cover bg-center w-full p-[18px] overflow-hidden">
                 <div className="">
-                    <img src={filter} alt="" className="float-end bg-opacity-20 bg-white p-2 rounded" />
+                    <img src={filter} alt="" className="float-end blur-sm-btn" />
                     <h2 className="text-white text-center text-[24px] font-semibold">Leaderboard</h2>
                 </div>
 
@@ -35,7 +36,7 @@ function Leaderboard() {
                         Points
                     </button>
                 </div>
-                <div className="h-[47%] overflow-auto mt-[20px]">
+                <div className="h-[100%] mt-[20px]">
                     {
                         activeTab === "Referrals" && (
                             <ReferalLeaderboard openModal={openModal} setOpenModal={setOpenModal} />
@@ -43,7 +44,7 @@ function Leaderboard() {
                     }
                     {
                         activeTab === "Points" && (
-                            <h1>efefwe</h1>
+                            <MasterLeaderboard openModal={openModal} setOpenModal={setOpenModal} />
                         )
                     }
                 </div>
@@ -61,7 +62,7 @@ function Leaderboard() {
                         <img src={cross} alt="Close" />
                     </button>
                 </div>
-                <div className="flex justify-between text-center items-center flex-wrap">
+                <div className="flex justify-between text-center items-center flex-wrap float-end">
                     <div className="w-full mt-[40px]">
                         <h3 className="text-white text-center text-4xl font-bold">William</h3>
                     </div>

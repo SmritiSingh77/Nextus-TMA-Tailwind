@@ -4,13 +4,12 @@ import leaderboard1 from "../assets/images/icon/leaderboard-1.png";
 import leaderboard2 from "../assets/images/icon/leaderboard-2.png";
 import leaderboard3 from "../assets/images/icon/leaderboard-3.png";
 
-
-function ReferalLeaderboard({ openModal, setOpenModal }) {
+function MasterLeaderboard({openModal, setOpenModal}) {
     const handleOpen = () => {
         setOpenModal(!openModal)
     }
 
-    const ReferalLeaderBoard = [
+    const MasterLeaderboard = [
         {
             img: leaderboard1,
             userName: 'William',
@@ -42,8 +41,8 @@ function ReferalLeaderboard({ openModal, setOpenModal }) {
             userReferal: '245'
         }
     ]
-    return (
-        <div className="h-[100%]">
+  return (
+    <div className="h-[100%]">
             <div
                 onClick={handleOpen}
                 className="">
@@ -54,17 +53,17 @@ function ReferalLeaderboard({ openModal, setOpenModal }) {
                     </div>
                     <div className="w-[20%]">
                         <small className="text-white text-[10px] font-normal">Points</small>
-                        <p className='text-white text-center font-medium text-[15px]'>87.k</p>
+                        <p className='text-white text-center font-medium text-[15px]'>98.9K</p>
                     </div>
                     <div className="border border-white h-[35px] opacity-[0.5]"></div>
                     <div className="w-[20%]">
-                        <small className="text-white text-[10px] font-normal">Referrals</small>
-                        <p className='text-white text-center font-medium text-[15px]'>25</p>
+                        <small className="text-white text-[10px] font-normal">Level</small>
+                        <p className='text-white text-center font-medium text-[15px]'>2</p>
                     </div>
                     <div className="border border-white h-[35px] opacity-[0.5]"></div>
                     <div className="w-[20%]">
                         <small className="text-white text-[10px] font-normal">Rank</small>
-                        <p className='text-white text-center font-medium text-[15px]'>124</p>
+                        <p className='text-white text-center font-medium text-[15px]'>7878</p>
                     </div>
                 </div>
             </div>
@@ -74,19 +73,19 @@ function ReferalLeaderboard({ openModal, setOpenModal }) {
                     <thead>
                         <tr>
                             <th className="text-center text-[10px] font-normal text-white w-1/4 pb-[21px]">Rank</th>
-                            <th className="text-left ps-6 text-[10px] font-normal text-white pb-[21px]">Users/Total Points</th>
-                            <th className="text-center text-[10px] font-normal text-white pb-[21px]">Referrals</th>
+                            <th className="text-left ps-6 text-[10px] font-normal text-white pb-[21px]">Users</th>
+                            <th className="text-center text-[10px] font-normal text-white pb-[21px]">Total Points</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {ReferalLeaderBoard.map((user, index) => (
+                        {MasterLeaderboard.map((user, index) => (
                             <tr
                                 key={index}
-                                className={`rounded-r-none bg-gradient-to-r
+                                className={`rounded-r-none bg-gradient-to-r border-b border-nextusGray
                                      ${index === 0 ? 'from-[rgba(253,206,14,0.3)] to-[rgba(253,206,14,0)]' : ''}
                                      ${index === 1 ? 'from-[rgba(224,216,216,0.3)] to-[rgba(224,216,216,0.0)]' : ''}  
                                      ${index === 2 ? 'from-[rgba(163,76,20,0.3)] to-[rgba(163,76,20,0)]' : ''}
-                                     ${index === ReferalLeaderBoard.length - 1 ? '' : 'border-b border-nextusGray' }
+                                     ${index === MasterLeaderboard.length - 1 ? '' : 'border-b border-nextusGray' }
                                     `}
                             >
                                 <th
@@ -102,13 +101,10 @@ function ReferalLeaderboard({ openModal, setOpenModal }) {
                                     <h5 className="text-white text-base font-bold">
                                         {user.userName}
                                     </h5>
-                                    <small className='text-brand text-xs font-semibold'>
-                                        {user.userPoints} Points
-                                    </small>
                                 </td>
                                 <td className='text-center py-2'>
                                     <small className='text-brand text-xs font-semibold'>
-                                        {user.userReferal} Referred
+                                        {user.userPoints} Points
                                     </small>
                                 </td>
                             </tr>
@@ -119,7 +115,7 @@ function ReferalLeaderboard({ openModal, setOpenModal }) {
             </div>
 
         </div>
-    )
+  )
 }
 
-export default ReferalLeaderboard
+export default MasterLeaderboard

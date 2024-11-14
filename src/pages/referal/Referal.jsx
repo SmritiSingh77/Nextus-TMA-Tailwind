@@ -69,7 +69,7 @@ function Referal() {
     ]
 
     return (
-        <div className="h-screen relative bg-[url('../../public/images/home-bg.webp')] bg-cover bg-center w-full">
+        <div className="h-screen relative bg-[url('../../public/images/home-bg.webp')] bg-cover bg-center w-full overflow-hidden">
             <div className='p-[18px] h-full'>
                 <div>
                     <Link to="/">
@@ -83,7 +83,7 @@ function Referal() {
                     <h3 className='text-white text-center text-base font-semibold my-[22px]'>Invite your friends, reward yourself</h3>
                 </div>
 
-                <div className="mx-auto mt-[28px] text-white px-[15px] py-[10px] font-medium flex justify-center items-center w-fit gap-4 rounded-[16px] border border-[rgba(255,255,255,0.2)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-sm">
+                <div className="mx-auto mt-[28px] text-white font-medium flex justify-center items-center w-fit gap-4 blur-btn">
                     <button
                         onClick={() => handleTabClick("Referrals")}
                         className={`w-[120px] text-center h-[32px] text-[18px] ${activeTab === "Referrals" ? "bg-brand rounded-[8px] font-bold" : ""}`}
@@ -154,7 +154,7 @@ function Referal() {
 
                 <div className="flex justify-center gap-4 mt-3">
                     <button
-                        className="rounded-xl border border-[rgba(255,255,255,0.2)] bg-brand backdrop-blur-sm text-base font-semibold flex items-center justify-center gap-[6px] text-white w-[200px] h-12"
+                        className="refer-btn"
                     // onClick={() => {
                     //     handleShareClick();
                     // }}
@@ -162,7 +162,7 @@ function Referal() {
                         Refer your friends <img src={shareImg} alt='share img' />
                     </button>
                     <button
-                        className="w-12 h-12 rounded-lg border border-[rgba(255,255,255,0.2)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-sm"
+                        className="w-12 h-12 blur-sm-btn border border-white/20"
                     // onClick={() h- => handleCopy()}
                     >
                         <img src={copy} alt="copy" className='m-auto' />

@@ -39,11 +39,11 @@ function WelcomeBonus() {
                         </button>
                         
                         {/* Popup content */}
-                        <div className="flex flex-col gap-[18px]">
-                            <h2 className="text-brand text-center text-[30px] font-bold mt-[40px]">Welcome Bonus</h2>
+                        <div className="flex flex-col gap-[18px] float-end">
+                            <h2 className="text-brand text-center text-[30px] font-bold mt-[35px]">Welcome Bonus</h2>
 
                             {/* Bonus amount display */}
-                            <div className="m-auto p-[10px] flex justify-center items-center w-fit gap-1 rounded-lg border border-[rgba(255,255,255,0.2)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-sm">
+                            <div className="m-auto flex justify-center items-center w-fit gap-1 blur-btn">
                                 <img src={coin} alt="Coin Icon" />
                                 <h3 className="text-brand text-center text-[24px] font-bold">10,000</h3>
                             </div>
@@ -54,7 +54,7 @@ function WelcomeBonus() {
                             <div>
                                 <button
                                     type="button"
-                                    className="mx-auto mt-[8px] text-[18px] text-brand font-bold p-[10px] flex justify-center items-center w-fit gap-1 rounded-lg border border-[rgba(255,255,255,0.2)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-sm"
+                                    className="mx-auto mt-[8px] text-[18px] text-brand font-bold flex justify-center items-center w-fit gap-1 blur-btn"
                                 >
                                     {`Let's Start`}
                                     <img src={arr} alt="Arrow Icon" />

@@ -10,20 +10,20 @@ const HomeHeaderSection = () => {
 
   return (
     // Header container with items spaced between
-    <div className="flex justify-between items-center mb-[15px]">
+    <div className="flex justify-between items-center mb-[10px]">
       
       {/* Profile Icon */}
-      <div className="bg-opacity-20 bg-white p-2 rounded">
+      <div className="blur-sm-btn">
         <img className="w-[16px] h-[16px]" src={profile} alt="profile icon" />
       </div>
 
       {/* Notifications and Settings Icons */}
       <div className="flex gap-2 items-center">
-        <div className="bg-opacity-20 bg-white p-2 rounded">
+        <div className="blur-sm-btn">
           <img className="w-[16px] h-[16px]" src={bell} alt="notifications icon" />
         </div>
         <div
-          className="bg-opacity-20 bg-white p-2 rounded cursor-pointer"
+          className="blur-sm-btn cursor-pointer"
           onClick={() => navigate("/settings")}
         >
           <img className="w-[16px] h-[16px]" src={settings} alt="settings icon" />

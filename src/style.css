@@ -1,2 +1,67 @@
 
+.refer-btn {
+    display: flex;
+    padding: 15px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    background: #F37021;
+    color: #fff;
+    font-family: "poppins";
+    font-size: 16px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: 1px solid #F37021;
+    width: 260px;
+}
+.copy-refer-btn{
+    display: flex;
+    padding: 15px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    background: transparent;
+    color: #fff;
+    font-family: "poppins";
+    font-size: 16px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: 1px solid #fff;
+    width: 260px;
+}
   
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.active svg{
+fill:#F37021;
+}
+.inactive svg {
+fill: #fff;
+opacity: 0.5;
+}
+
+.blur-btn {
+    padding: 10px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background:linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(5px);
+}
+.blur-sm-btn{
+    border-radius: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+}

@@ -110,7 +110,7 @@ function BottomNavbar() {
     ];
 
     return (
-        <nav className="fixed bottom-[18px] px-[16px] rounded-[16px] border border-white/[0.2] backdrop-blur-sm custom-gradient flex justify-between w-full">
+        <nav className="fixed bottom-[18px] px-[16px] rounded-[16px] border border-white/[0.2] backdrop-blur-sm custom-gradient flex justify-between left-[18px] right-[18px]">
             {buttons.map((button, index) => (
                 <div key={index} onClick={() => navigate(button.path)}>
                     <button

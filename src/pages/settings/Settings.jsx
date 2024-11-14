@@ -35,14 +35,14 @@ function Settings() {
 
                 <div className="flex h-[90%] flex-col justify-between w-full">
                     <div>
-                        <div className="flex items-center gap-3 mt-[44px] p-[10px] px-[16px] rounded-[16px] border border-[rgba(255,255,255,0.20)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-[5px]">
+                        <div className="flex items-center gap-3 mt-[44px] border border-white/20 blur-btn">
                             <img src={profile} alt="" />
                             <div>
                                 <h5 className='text-white text-[16px] font-bold'>John Mark</h5>
                                 <small className='text-[#A0A0A0] text-xs font-medium'>Level Name</small>
                             </div>
                         </div>
-                        <div className="p-[16px] rounded-[16px] border border-[rgba(255,255,255,0.20)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-[5px] mt-[16px]">
+                        <div className="mt-[16px] border border-white/20 blur-btn">
                             <ToggleLanguage />
                             <ToggleSound />
                             <ConnectWallet />
@@ -78,8 +78,8 @@ function Settings() {
                         <img src={cross} alt="Close" />
                     </button>
                 </div>
-                <div>
-                    <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[15px]">Connect Nextus</h2>
+                <div className='text-center'>
+                    <h2 className="text-brand text-[30px] font-bold mt-[40px] mb-[15px]">Connect Nextus</h2>
                     <div className="flex justify-between items-center gap-3 mt-[18px]">
                         <h4 className='text-white text-[14px] font-medium'>Enter Nextus UID</h4>
                         <img src={info} alt="Info icon" />
@@ -108,7 +108,7 @@ function Settings() {
                 )} */}
                     <button
                         type="submit"
-                        className="mx-auto mt-[28px] text-[18px] text-brand font-bold p-[10px] flex justify-center items-center w-fit gap-1 rounded-lg border border-[rgba(255,255,255,0.2)] bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] backdrop-blur-sm"
+                        className="mx-auto mt-[28px] text-[18px] text-brand font-bold border border-white/20 blur-sm-btn"
                     >
                         Connect
                     </button>
