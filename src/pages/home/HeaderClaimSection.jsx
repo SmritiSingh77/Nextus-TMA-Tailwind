@@ -21,11 +21,49 @@ function HeaderClaimSection() {
         setIsPopupVisible(!isPopupVisible);
     };
 
+    const dailyReward = [
+        {
+            day: '1',
+            points: '25K',
+            status: 'completed'
+        },
+        {
+            day: '2',
+            points: '50K',
+            status: 'completed'
+        },
+        {
+            day: '3',
+            points: '100K',
+            status: 'active'
+        },
+        {
+            day: '4',
+            points: '125K',
+            status: 'pending'
+        },
+        {
+            day: '5',
+            points: '150K',
+            status: 'pending'
+        },
+        {
+            day: '6',
+            points: '200K',
+            status: 'pending'
+        },
+        {
+            day: '7',
+            points: '250K',
+            status: 'pending'
+        }
+    ]
+
     return (
         <>
             {/* Header claim section with trade and quiz information */}
             <div className="py-2 flex">
-                
+
                 {/* Daily Trade Section with reward icon */}
                 <div className="w-7/12 flex justify-between">
                     <button
@@ -37,7 +75,7 @@ function HeaderClaimSection() {
                     >
                         <div className="flex flex-col items-center cursor-pointer">
                             <img src={reward} alt="Reward Icon" />
-                            <p className="text-white text-[12px] font-semibold leading-none text-center mb-2">
+                            <p className="text-white text-[12px] font-semibold leading-none text-center mb-2 mt-1">
                                 Daily Trade
                             </p>
                             <span className="text-[8px] font-normal leading-none text-gray-400">
@@ -53,7 +91,7 @@ function HeaderClaimSection() {
                     <div className="w-[45%]">
                         <div className="flex flex-col items-center cursor-pointer">
                             <img src={mystery} alt="Mystery Icon" />
-                            <p className="text-white text-[12px] font-semibold leading-none text-center mb-2">
+                            <p className="text-white text-[12px] font-semibold leading-none text-center mb-2 mt-1">
                                 Daily Quiz
                             </p>
                             <span className="text-[8px] font-normal leading-none text-gray-400">
@@ -111,16 +149,34 @@ function HeaderClaimSection() {
                     </button>
                 </div>
                 {/* Daily rewards content */}
-                <div>
-                    <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[15px]">Daily Rewards</h2>
-                    <div className="flex flex-wrap justify-center">
-                        <div className="daily-rewards-card day-completed">
-                            <h3>Day 3</h3>
-                            <img src={coin_m} alt="Coin Icon" />
-                            <small>+100K</small>
-                        </div>
+                <div className="text-center">
+                    <h2 className="text-brand text-center text-[30px] font-bold mt-[40px] mb-[30px]">Daily Rewards</h2>
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {
+                            dailyReward.map((reward, index) => (
+                                <div
+                                    className={`rounded-[12px] border border-white/20 backdrop-blur-[5px] bg-gradient-to-br from-white/15 to-white/5 flex w-[72px] h-[72px] p-[8px] flex-col items-center gap-[2px]
+                                                 ${reward.status === 'completed' ? 'bg-brand text-white relative' : ''}
+                                                 ${reward.status === 'active' ? 'text-brand bg-gradient-to-t from-[rgba(243,112,33,0.3)] to-[rgba(243,112,33,0.3)]' : ''}
+                                                 ${reward.status === 'pending' ? 'text-nextusGray' : ''}
+                                             `}
+                                    key={index}
+                                >
+                                    {reward.status === 'completed' && (
+                                        <span
+                                            className="absolute top-[-10px] right-[-5px]"
+                                            style={{ content: "url('/src/assets/images/icon/tick.png')" }}
+                                        ></span>
+                                    )}
+                                    <h3 className="text-white text-[8px] font-medium">Day {reward.day}</h3>
+                                    <img src={coin_m} alt="Coin Icon" className="w-[26px]" />
+                                    <small className="text-[10px] font-bold">+{reward.points}</small>
+                                </div>
+
+                            ))
+                        }
                     </div>
-                    <button className="rotate-btn">Claim</button>
+                    <button className="blur-btn text-brand font-bold rotate-btn mt-[40px]">Claim</button>
                 </div>
             </div>
         </>

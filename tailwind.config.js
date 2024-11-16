@@ -12,7 +12,10 @@ export default {
         sans: ['Poppins', 'serif'], 
       },
       screens: {
+        'height-sm': { 'raw': '(min-height: 650px)' },
         'height-md': { 'raw': '(min-height: 700px)' },
+        'height-lg': { 'raw': '(min-height: 850px)' },
+        'width-xs': { 'raw': '(max-width: 320px)' },
       },
       colors: {
         brand: '#F37021',

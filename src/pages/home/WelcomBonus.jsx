@@ -40,21 +40,21 @@ function WelcomeBonus() {
                         
                         {/* Popup content */}
                         <div className="flex flex-col gap-[18px] float-end">
-                            <h2 className="text-brand text-center text-[30px] font-bold mt-[35px]">Welcome Bonus</h2>
+                            <h2 className="text-brand text-center text-[30px] width-xs:text-[25px] font-bold mt-[35px]">Welcome Bonus</h2>
 
                             {/* Bonus amount display */}
                             <div className="m-auto flex justify-center items-center w-fit gap-1 blur-btn">
                                 <img src={coin} alt="Coin Icon" />
-                                <h3 className="text-brand text-center text-[24px] font-bold">10,000</h3>
+                                <h3 className="text-brand text-center text-[24px] width-xs:text-[20px]  font-bold">10,000</h3>
                             </div>
-                            <h4 className="text-white text-center text-[14px] font-medium">
+                            <h4 className="text-white text-center text-[14px] width-xs:text-[12px]  font-medium">
                                 Tap into daily investment into cryptocurrencies, exchange it, and
                                 pay online with us.
                             </h4>
                             <div>
                                 <button
                                     type="button"
-                                    className="mx-auto mt-[8px] text-[18px] text-brand font-bold flex justify-center items-center w-fit gap-1 blur-btn"
+                                    className="mx-auto mt-[8px] text-[18px] width-xs:text-[15px] text-brand font-bold flex justify-center items-center w-fit gap-1 blur-btn"
                                 >
                                     {`Let's Start`}
                                     <img src={arr} alt="Arrow Icon" />

@@ -20,13 +20,13 @@ const Home = () => {
         <HomeHeaderSection />
 
         {/* Main Content Section */}
-        <div className="h-auto flex flex-col justify-center gap-2 height-md:h-[73%] height-md:gap-4">
+        <div className="h-auto flex flex-col justify-center gap-2 height-md:h-[80%] height-lg:h-[85%] height-md:gap-4 height-lg:gap-7">
 
           {/* Header Claim Section */}
           <HeaderClaimSection />
 
           {/* Coin and Level Information Section */}
-          <div className="flex items-center justify-center flex-wrap ">
+          <div className="flex items-center justify-center flex-wrap gap-[10px]">
             <div className="flex w-full justify-center">
               <img src={coin} alt="coin icon" className="w-auto h-auto" />
               <h2 className="text-brand text-[32px] font-bold">002</h2>
@@ -50,7 +50,7 @@ const Home = () => {
                 <span className="sr-only">50% completed</span>
               </div>
             </div>
-            <div className="h-[246px] w-[246px] height-md:w-[300px] height-md:h-[300px] relative">
+            <div className="h-[210px] w-[210px] height-sm:w-[300px] height-sm:h-[300px] height-md:w-[300px] height-md:h-[300px] height-lg:h-[350px] height-lg:w-[350px] relative">
               <img src={birdPng} alt="bird icon" className="w-auto h-auto" />
             </div>
           </div>
@@ -59,11 +59,11 @@ const Home = () => {
           <div className="level-card-two flex justify-between mx-auto w-10/12">
             <span className="flex items-center space-x-2">
               <img src={spark} alt="spark icon" className="w-4 h-4" />
-              <span className="text-brand text-[16px] font-bold">1000/1000</span>
+              <span className="text-brand text-[16px] width-xs:text-[12px] font-bold">1000/1000</span>
             </span>
             <span className="flex items-center space-x-2">
               <img src={battery} alt="battery icon" className="w-4 h-4" />
-              <span className="text-white text-[16px] font-bold">Boost</span>
+              <span className="text-white text-[16px] width-xs:text-[12px] font-bold">Boost</span>
             </span>
           </div>
         </div>

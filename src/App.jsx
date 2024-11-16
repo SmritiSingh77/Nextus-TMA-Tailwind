@@ -5,6 +5,7 @@ import Settings from "./pages/settings/Settings"
 import Referal from "./pages/referal/Referal"
 import DailyTask from "./pages/daily-task/DailyTask"
 import Leaderboard from "./pages/leaderboard/Leaderboard"
+import Error from "./pages/Error"
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/referal" element={<Referal />} />
       <Route path="/daily-tasks" element={<DailyTask />} />
       <Route path="/leaderboard" element={<Leaderboard />} />
+      <Route path="/error" element={<Error />} />
     </Routes>
    </Router>
   )

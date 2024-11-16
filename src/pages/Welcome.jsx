@@ -5,9 +5,9 @@ import logo from "../assets/images/logo.webp";
 const Welcome = () => {
   return (
     <div className="h-screen bg-[url('../../public/images/bg.webp')] bg-cover bg-center flex flex-col justify-center bg-[#161514] p-[18px]" >
-        <img src={logo} alt="logo" className="w-[200px] mx-auto" />
+        <img src={logo} alt="logo" className="w-[200px] width-xs:w-[150px] mx-auto" />
         <img src={bird} alt="bird" className="w-[315px] h-[315px] mt-[21px]" />
-        <h1 className="text-white text-[36px] relative mt-[21px]">
+        <h1 className="text-white text-[36px] width-xs:text-[30px] relative mt-[21px]">
           Buy, Sell &amp; Trade{" "}
           <svg
             className="absolute right-[45px]"

@@ -86,19 +86,19 @@ function Referal() {
                 <div className="mx-auto mt-[28px] text-white font-medium flex justify-center items-center w-fit gap-4 blur-btn">
                     <button
                         onClick={() => handleTabClick("Referrals")}
-                        className={`w-[120px] text-center h-[32px] text-[18px] ${activeTab === "Referrals" ? "bg-brand rounded-[8px] font-bold" : ""}`}
+                        className={`w-[120px] text-center h-[32px] text-[18px] width-xs:text[13px] ${activeTab === "Referrals" ? "bg-brand rounded-[8px] font-bold" : ""}`}
                     >
                         Referrals
                     </button>
                     <button
                         onClick={() => handleTabClick("Points")}
-                        className={`w-[120px] text-center h-[32px] text-[18px] ${activeTab === "Points" ? "bg-brand rounded-[8px] font-bold" : ""}`}
+                        className={`w-[120px] text-center h-[32px] text-[18px] width-xs:text[13px] ${activeTab === "Points" ? "bg-brand rounded-[8px] font-bold" : ""}`}
                     >
                         Points
                     </button>
                 </div>
 
-                <div className="h-[47%] overflow-auto mt-[20px]">
+                <div className="h-[47%] height-lg:h-[55%] overflow-auto mt-[20px]">
                     {activeTab === "Referrals" && (
                         <>
                             {
@@ -109,7 +109,7 @@ function Referal() {
                                     >
                                         <div className="flex flex-col justify-center items-center w-[25%]">
                                             <img src={items.profileImg} alt="" />
-                                            <h3 className="text-[14px] text-white font-semibold mt-1">{items.userName}</h3>
+                                            <h3 className="text-[14px] width-xs:text[12px] text-white font-semibold mt-1">{items.userName}</h3>
                                         </div>
                                         <div className="flex flex-col items-center w-[20%]">
                                             <small className="text-nextusGray text-[12px] font-semibold">Points</small>
@@ -154,7 +154,7 @@ function Referal() {
 
                 <div className="flex justify-center gap-4 mt-3">
                     <button
-                        className="refer-btn"
+                        className="refer-btn w-fit"
                     // onClick={() => {
                     //     handleShareClick();
                     // }}
@@ -162,7 +162,7 @@ function Referal() {
                         Refer your friends <img src={shareImg} alt='share img' />
                     </button>
                     <button
-                        className="w-12 h-12 blur-sm-btn border border-white/20"
+                        className="blur-btn"
                     // onClick={() h- => handleCopy()}
                     >
                         <img src={copy} alt="copy" className='m-auto' />
