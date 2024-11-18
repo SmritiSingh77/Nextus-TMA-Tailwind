@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'serif'], 
+        poppins: ['poppins', 'serif'], 
       },
       screens: {
         'height-sm': { 'raw': '(min-height: 650px)' },
