@@ -5,4 +5,189 @@
 /* Import Flowbite */
 @import 'flowbite';
 
+@layer components {
+    /* SVG styles */
+    .active svg {
+      @apply fill-[#F37021];
+    }
+  
+    .inactive svg {
+      @apply fill-white opacity-50;
+    }
+
+     /* Refer button */
+     .refer-btn {
+        @apply flex px-5 py-[15px] justify-center items-center gap-2 rounded-xl bg-[#F37021] text-white font-poppins text-[16px] border border-[#F37021] font-bold leading-normal w-[260px];
+      }
+    
+      /* Copy refer button */
+      .copy-refer-btn {
+        @apply flex px-6 py-[15px] justify-center items-center gap-2 rounded-xl bg-transparent text-white font-poppins text-[16px] border border-white font-bold leading-normal w-[260px];
+      }
+  }
+
+  @layer base {
+    body {
+      @apply bg-black font-poppins ;
+    }
+    
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  
+    * {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+      @media (max-width: 320px) {
+        .refer-btn {
+          @apply px-2 py-2 text-sm;
+        }
+    
+        .blur-btn {
+          @apply px-2 py-2;
+        }
+      }
+    
+      @media (min-width: 620px) {
+        body {
+          @apply hidden;
+        }
+      }
+  }
+
+  @layer components {
+    /* Blur Button */
+    .blur-btn {
+      @apply px-4 py-[10px] rounded-2xl border border-[rgba(255,255,255,0.20)] 
+             bg-gradient-to-br from-[rgba(255,255,255,0.15)] to-[rgba(255,255,255,0.02)] 
+             backdrop-blur-sm;
+    }
+  
+    /* Small Blur Button */
+    .blur-sm-btn {
+      @apply px-2 py-2 rounded-lg bg-[rgba(255,255,255,0.1)];
+    }
+  
+    /* Rotate Button */
+    .rotate-btn::after {
+      content: '';
+      display: block;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: calc(50% - 0.75em);
+      top: calc(50% - 0.75em);
+      border: 0.15em solid transparent;
+      border-right-color: #F37021;
+      border-radius: 50%;
+      animation: button-anim 0.9s linear infinite;
+      opacity: 0;
+    }
+  
+    .rotate-btn.loading {
+      @apply text-[#f26a1e47];
+    }
+  
+    .rotate-btn.loading::after {
+      opacity: 1;
+    }
+  
+    /* Error Screen */
+    .wrapper-text {
+      @apply flex flex-col h-full justify-center items-center gap-20;
+    }
+  
+    .loader-outer {
+      @apply relative w-[240px] h-4 rounded-full border border-[#F37021] bg-[#e0d9cb38] 
+             shadow-inner overflow-hidden z-[1];
+    }
+  
+    .loader-outer .loader-inner {
+      @apply absolute m-auto top-0 bottom-0 text-center text-[#F37021] text-[60px] 
+             font-bold leading-normal z-[2];
+      text-shadow: 0 0 20px #F37021;
+      animation: load 1s infinite linear;
+    }
+  
+    .wrapper h1 {
+      @apply text-center text-white font-[Micro_5] text-[64px];
+    }
+  
+    .rotate-div {
+      @apply w-20 h-[15px] rounded-full bg-[#F37021];
+    }
+  
+    .wrapper h1 span {
+      @apply hidden;
+    }
+  
+    .wrapper p {
+      @apply text-center text-white text-sm font-medium mt-4 mb-10;
+    }
+  
+    .spinner-box {
+      @apply w-full h-full flex justify-center items-center bg-transparent;
+    }
+  
+    .circle-border {
+      @apply w-[60px] h-[60px] p-1 flex justify-center items-center rounded-full bg-gradient-to-b 
+             from-[rgba(249,162,63,0.1)] to-[#F37021];
+      animation: spin 0.8s linear infinite;
+    }
+  
+    .circle-core {
+      @apply w-full h-full bg-[#040c12] rounded-full;
+    }
+  }
+
+  
+  @layer utilities {
+    /* Keyframes */
+    @keyframes button-anim {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes load {
+      0% {
+        left: -100px;
+      }
+      100% {
+        left: 220px;
+      }
+    }
+  
+    @keyframes txt {
+      0% {
+        content: "ERROR";
+      }
+      35% {
+        content: "ERROR.";
+      }
+      65% {
+        content: "ERROR..";
+      }
+      100% {
+        content: "ERROR..!";
+      }
+    }
+  
+    @keyframes spin {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+    
+  }
+  
+  
 

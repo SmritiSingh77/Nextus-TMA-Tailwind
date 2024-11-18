@@ -177,6 +177,7 @@ function HeaderClaimSection() {
                         }
                     </div>
                     <button className="blur-btn text-brand font-bold rotate-btn mt-[40px]">Claim</button>
+                    
                 </div>
             </div>
         </>
