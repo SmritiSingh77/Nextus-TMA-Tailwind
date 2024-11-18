@@ -1,3 +1,7 @@
+body {
+  background-color: #000;
+}
+
 .refer-btn {
   display: flex;
   padding: 15px 20px;
@@ -254,5 +258,11 @@
 
   .blur-btn {
     padding: 10px;
+  }
+}
+
+@media (min-width: 620px){
+  body{
+    display: none;
   }
 }
